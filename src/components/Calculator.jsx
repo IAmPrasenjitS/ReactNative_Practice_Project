@@ -110,7 +110,7 @@ export default function Calculator() {
         <Text style={styles.operationText}>{calcText}</Text>
       </View>
       <View style={styles.numPad}>
-        <View style={{ flex: 5 }}>
+        <View style={{ flex: 5, marginLeft: 20 }}>
           {/* Buttons row one */}
           <View style={{ flexDirection: 'row', flex: 1 }}>
             <View style={{ flexDirection: 'row', flex: 4, alignItems: 'center' }}>

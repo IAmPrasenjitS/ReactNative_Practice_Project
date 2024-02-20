@@ -2,6 +2,7 @@ import { Dimensions, StyleSheet, Text, Touchable, TouchableOpacity, View } from 
 import React, { useState } from 'react'
 import Calculator from './src/components/Calculator';
 import Default from './src/components/Default';
+import PasswordGenerator from './src/components/PasswordGenerator';
 
 
 // const windowWidth = Dimensions.get('window').width;
@@ -9,18 +10,18 @@ const windowHeight = parseInt(Dimensions.get('window').height);
 const heightScreenTenPercent = (windowHeight * 10) / 100
 const heightScreenNintyPercent = windowHeight - heightScreenTenPercent
 export default function App() {
-  const [project, setProject] = useState(<Default/>)
+  const [project, setProject] = useState(<Default />)
   return (
     <View style={styles.mainView}>
       <View style={styles.contentArea}>
-      {project}
+        {project}
       </View>
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.buttonProject} onPress={()=>(setProject(<Calculator/>))}>
+        <TouchableOpacity style={styles.buttonProject} onPress={() => (setProject(<Calculator />))}>
           <Text style={styles.buttonText}>Calculator</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonProject}>
-          <Text style={styles.buttonText}>Calculator</Text>
+        <TouchableOpacity style={styles.buttonProject} onPress={() => (setProject(<PasswordGenerator />))}>
+          <Text style={styles.buttonText}>Password Generator</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonProject}>
           <Text style={styles.buttonText}>Calculator</Text>
@@ -46,10 +47,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     justifyContent: 'space-evenly'
   },
-  buttonProject:{
+  buttonProject: {
     backgroundColor: 'purple',
-    maxWidth: 100,
-    height:50,
+    maxWidth: '200',
+    height: 50,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
